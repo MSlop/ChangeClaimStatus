@@ -30,9 +30,9 @@ public class EventManager implements CommandLineRunner {
         variables.put("managerEmail","mslop2017@gmail.com");
         variables.put("policyId","100");
         variables.put("claimId", claimId);
-        variables.put("currentStatus", "open");
+        variables.put("currentStatus", "PEN");
 
-        // Send event messageName = "CreateClaim" with variables = variables
+        // Send event messageName with variables = variables
         String messageKey = claimId;
         client.newPublishMessageCommand().messageName("change_status").correlationKey(messageKey).variables(variables)
                 .send()
